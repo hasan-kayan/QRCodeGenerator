@@ -5,6 +5,7 @@ from pyqrcode import QRCode
   
 
 # String which represents the QR code
+# Take an input of the URL to import it in QR 
 embeddedURL = input("Please enter the url you want to embedded : ")
   
 # Generate QR code
