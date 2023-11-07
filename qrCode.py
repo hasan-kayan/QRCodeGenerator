@@ -2,17 +2,25 @@
 import pyqrcode
 import png
 from pyqrcode import QRCode
-  
 
-# String which represents the QR code
-# Take an input of the URL to import it in QR 
-embeddedURL = input("Please enter the url you want to embedded : ")
-  
+# vCard information
+vcard_info = """BEGIN:VCARD
+VERSION:3.0
+N:Erol;Eda
+FN:Eda Erol
+ORG:Poliark Inc
+TITLE:Founder & CEO
+TEL;TYPE=WORK,VOICE:+905397728894
+EMAIL;TYPE=PREF,INTERNET:edaerol@poliark.com
+URL:www.poliark.com
+ADR;TYPE=WORK:;;USA | TR
+END:VCARD"""
+
 # Generate QR code
-url = pyqrcode.create(embeddedURL)
-  
+qr_code = pyqrcode.create(vcard_info)
+
 # Create and save the svg file naming "myqr.svg"
-url.svg("myqr.svg", scale = 8)
-  
+qr_code.svg("myqr.svg", scale = 8)
+
 # Create and save the png file naming "myqr.png"
-url.png('myqr.png', scale = 6)
+qr_code.png('myqr.png', scale = 6)
